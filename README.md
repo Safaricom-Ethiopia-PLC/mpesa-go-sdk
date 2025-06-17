@@ -1,16 +1,20 @@
-# `mpesagosdk`: The Best M-Pesa SDK for Golang
+# `mpesa-go-sdk`: The Best M-Pesa SDK for Golang
 
 ![coverage](https://img.shields.io/badge/coverage-100.0%25-brightgreen)
-[![Go Reference](https://pkg.go.dev/badge/github.com/coleYab/mpesasdk.svg)](https://pkg.go.dev/github.com/coleYab/mpesasdk)
-[![Go Report Card](https://goreportcard.com/badge/github.com/coleYab/mpesasdk)](https://goreportcard.com/report/github.com/coleYab/mpesasdk)
+[![Go Reference](https://pkg.go.dev/badge/github.com/Safaricom-Ethiopia-PLC/mpesa-go-sdk.svg)](https://pkg.go.dev/github.com/Safaricom-Ethiopia-PLC/mpesa-go-sdk)
+[![Go Report Card](https://goreportcard.com/badge/github.com/Safaricom-Ethiopia-PLC/mpesa-go-sdk)](https://goreportcard.com/report/github.com/Safaricom-Ethiopia-PLC/mpesa-go-sdk) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://mit-license.org/Safaricom-Ethiopia-PLC)
 
-`mpesagosdk` is a Go SDK for interacting with Safaricom's M-Pesa API. This SDK simplifies integration with M-Pesa's services, enabling operations such as B2C payments, C2B URL registration, USSD Push payments, transaction status queries, account balance checks, and transaction reversals.
+## Overview
+
+`mpesa-go-sdk` is a Go SDK for interacting with Safaricom's M-Pesa API. This SDK simplifies integration with M-Pesa's services, enabling operations such as B2C payments, C2B URL registration, USSD Push payments, transaction status queries, account balance checks, and transaction reversals.
 
 ## Documentation
+
 For further detailed documentation and api keys you can access it [here.](https://developer.safaricom.et/documentation)
 
 ## Features
 
+- **Authentication**: Retrieve OAuth2 access tokens.
 - **B2C Payments**: Transfer funds from a business account to a customer account.
 - **C2B URL Registration**: Register URLs for payment notifications.
 - **USSD Push**: Initiate USSD-based payment requests.
@@ -18,63 +22,57 @@ For further detailed documentation and api keys you can access it [here.](https:
 - **Account Balance**: Retrieve M-Pesa account balances.
 - **Transaction Reversal**: Reverse a completed M-Pesa transaction.
 
-## Table of Contents
+## Requirements
 
-- [Installation](#installation)
-- [Quick Start](#quick-start)
-- [Examples](#examples)
-  - [Register C2B URL](#register-c2b-url)
-  - [Simulate C2B Payment](#simulate-c2b-payment)
-  - [Make B2C Payment](#make-b2c-payment)
-  - [Transaction Status Query](#transaction-status-query)
-  - [Account Balance Query](#account-balance-query)
-  - [Transaction Reversal](#transaction-reversal)
-  - [USSD Push Payment](#ussd-push-payment)
-- [Contributing](#contributing)
-- [License](#license)
+- Go (Golang) Installed: The SDK is a Go module and requires a Go development environment. Make sure that Go is installed on your system. You can download it from the official Go website: [https://golang.org/dl/](https://golang.org/dl/).
+
+- M-Pesa Developer Account: You need access to the Safaricom Ethiopia Developer ([https://developer.safaricom.et/documentation](https://developer.safaricom.et/documentation)) Portal to obtain the following credentials:
+  - `CONSUMER_KEY`
+  - `CONSUMER_SECRET`
 
 ## Installation
 
 To install the SDK, use the following command:
 
 ```bash
-go get github.com/coleYab/mpesagosdk
+go get github.com/Safaricom-Ethiopia-PLC/mpesa-go-sdk
 ```
 
-## Quick Start
+## Configuration
 
-### Initialize the MpesaClient
+### Quick Start - Initialize the MpesaClient
 
 ```go
 package main
 
 import (
-	"fmt"
-	"log"
+ "fmt"
+ "log"
 
-	"github.com/coleYab/mpesagosdk"
-	"github.com/coleYab/mpesagosdk/config"
+ "github.com/Safaricom-Ethiopia-PLC/mpesa-go-sdk"
+ "github.com/Safaricom-Ethiopia-PLC/mpesa-go-sdk/config"
 )
 
 func main() {
-	// Load configuration from environment variables
-	cfg, err := config.NewFromEnv()
-	if err != nil {
-		log.Fatal(err.Error())
-	}
+ // Load configuration from environment variables
+ cfg, err := config.NewFromEnv()
+ if err != nil {
+  log.Fatal(err.Error())
+ }
 
-	// Create a new Mpesa client
-	app := mpesagosdk.New(cfg)
-	fmt.Println("Application is created with: ", *app)
+ // Create a new Mpesa client
+ app := mpesa-go-sdk.New(cfg)
+ fmt.Println("Application is created with: ", *app)
 }
 ```
 
+### Environment variables
 
-## Configuration
 To configure this application you can either create the config struct by yourself or you can create .env file
 this package depends on [joho/godotenv/autoload](https://github.com/joho/godotenv/) package this will load the .env
 to the program.
 Simple .env looks like this
+
 ```bash
 # Required credentials
 CONSUMER_SECRET=your_consumer_secret_here
@@ -88,7 +86,7 @@ LOG_LEVEL=DEBUG                  # Optional: defaults to DEBUG
 ENVIROMENT=SANDBOX               # Optional: defaults to SANDBOX
 ```
 
-## Examples
+## Usage
 
 ### Register C2B URL
 
@@ -253,13 +251,39 @@ if err != nil {
 
 ## Contributing
 
-1. Fork the repository.
-2. Create a new branch.
-3. Commit your changes.
-4. Push to the branch.
-5. Open a pull request.
+Contributions are welcome! Please follow these steps:
+
+1. **Fork the repository** on GitHub.
+2. **Clone your fork** to your local machine.
+
+   ```bash
+   git clone https://github.com/Safaricom-Ethiopia-PLC/mpesa-python-sdk.git
+   ```
+
+3. **Create a new feature branch**.
+
+   ```bash
+   git checkout -b feature/<your-feature-name>
+   ```
+
+4. **Make your changes** and commit them.
+
+   ```bash
+   git commit -am "Add new <short feature description>"
+   ```
+
+5. **Push your branch** to your fork.
+
+   ```bash
+   git push origin feature/<your-feature-name>
+   ```
+
+6. **Open a pull request** from your branch to the main repository.
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the [MIT License](https://mit-license.org/Safaricom-Ethiopia-PLC). See the [LICENSE](LICENSE) file for more details.
 
+---
+
+_Happy coding with M-Pesa Go SDK!_

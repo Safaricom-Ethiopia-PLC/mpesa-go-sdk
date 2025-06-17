@@ -1,5 +1,5 @@
 // Package client provides a wrapper around the HTTP client to facilitate making
-// API requests for the mpesagosdk.
+// API requests for the mpesa-go-sdk.
 // 
 // This package provides an `HttpClient` struct that manages HTTP requests, including
 // handling retries, authentication (using Bearer or Basic Auth), and configuring
@@ -44,9 +44,9 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/coleYab/mpesagosdk/config"
-	"github.com/coleYab/mpesagosdk/internal/auth"
-	"github.com/coleYab/mpesagosdk/internal/utils"
+	"github.com/Safaricom-Ethiopia-PLC/mpesa-go-sdk/config"
+	"github.com/Safaricom-Ethiopia-PLC/mpesa-go-sdk/internal/auth"
+	"github.com/Safaricom-Ethiopia-PLC/mpesa-go-sdk/internal/utils"
 )
 
 // HttpClient is a wrapper over the standard HTTP client that manages retries, timeouts,
