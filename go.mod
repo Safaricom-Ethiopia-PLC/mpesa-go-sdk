@@ -1,4 +1,4 @@
-module github.com/coleYab/mpesagosdk
+module github.com/Safaricom-Ethiopia-PLC/mpesa-go-sdk
 
 go 1.23.2
 

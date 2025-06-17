@@ -43,7 +43,7 @@ import (
 	"time"
 	"sync"
 
-	"github.com/coleYab/mpesagosdk/internal/utils"
+	"github.com/Safaricom-Ethiopia-PLC/mpesa-go-sdk/internal/utils"
 )
 
 const (

@@ -1,4 +1,4 @@
-// Package mpesagosdk provides a comprehensive SDK for interacting with the M-Pesa API,
+// Package mpesa-go-sdk provides a comprehensive SDK for interacting with the M-Pesa API,
 // allowing developers to integrate mobile money payment services into their applications.
 // The package simplifies common M-Pesa operations such as C2B (Customer-to-Business) payments,
 // B2C (Business-to-Customer) disbursements, transaction status checks, account balance inquiries,
@@ -7,22 +7,22 @@
 // The package is designed to abstract the complexities of working directly with M-Pesa APIs by
 // providing strongly-typed request/response structures, reusable client configurations, and automatic
 // request validation and default value population.
-package mpesagosdk
+package mpesa-go-sdk
 
 import (
 	"fmt"
 	"net/http"
 
-	"github.com/coleYab/mpesagosdk/account"
-	"github.com/coleYab/mpesagosdk/b2c"
-	"github.com/coleYab/mpesagosdk/c2b"
-	"github.com/coleYab/mpesagosdk/config"
-	"github.com/coleYab/mpesagosdk/internal/auth"
-	"github.com/coleYab/mpesagosdk/internal/client"
-	"github.com/coleYab/mpesagosdk/internal/logger"
-	"github.com/coleYab/mpesagosdk/internal/utils"
-	"github.com/coleYab/mpesagosdk/transaction"
-	"github.com/coleYab/mpesagosdk/types"
+	"github.com/Safaricom-Ethiopia-PLC/mpesa-go-sdk/account"
+	"github.com/Safaricom-Ethiopia-PLC/mpesa-go-sdk/b2c"
+	"github.com/Safaricom-Ethiopia-PLC/mpesa-go-sdk/c2b"
+	"github.com/Safaricom-Ethiopia-PLC/mpesa-go-sdk/config"
+	"github.com/Safaricom-Ethiopia-PLC/mpesa-go-sdk/internal/auth"
+	"github.com/Safaricom-Ethiopia-PLC/mpesa-go-sdk/internal/client"
+	"github.com/Safaricom-Ethiopia-PLC/mpesa-go-sdk/internal/logger"
+	"github.com/Safaricom-Ethiopia-PLC/mpesa-go-sdk/internal/utils"
+	"github.com/Safaricom-Ethiopia-PLC/mpesa-go-sdk/transaction"
+	"github.com/Safaricom-Ethiopia-PLC/mpesa-go-sdk/types"
 	"github.com/go-playground/validator/v10"
 )
 
@@ -51,7 +51,7 @@ import (
 //	}
 //
 //	// Create a new instance of the App struct
-//	app := mpesagosdk.New(cfg)
+//	app := mpesa-go-sdk.New(cfg)
 //
 //	// Now you can use the app to interact with M-Pesa API, for example:
 //	res, err := app.MakeB2CPaymentRequest(someB2CPaymentRequest)
