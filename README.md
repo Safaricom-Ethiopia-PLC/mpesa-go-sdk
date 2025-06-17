@@ -1,4 +1,4 @@
-# `mpesa-go-sdk`: The Best M-Pesa SDK for Golang
+# [mpesa-go-sdk]: M-Pesa SDK for Golang
 
 ![coverage](https://img.shields.io/badge/coverage-100.0%25-brightgreen)
 [![Go Reference](https://pkg.go.dev/badge/github.com/Safaricom-Ethiopia-PLC/mpesa-go-sdk.svg)](https://pkg.go.dev/github.com/Safaricom-Ethiopia-PLC/mpesa-go-sdk)
